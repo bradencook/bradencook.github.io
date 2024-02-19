@@ -28,11 +28,11 @@ function animate() {
             velocities[i] += acceleration;
             if (relative_pos[i] > 0 && velocities[i] > 0) {
                 bounce ++
-                if (init + 0.1 * bounce > 0) {
+                if (init + 0.05 * bounce > 0) {
                     velocities[i] = 0
                 }
                 else {
-                    velocities[i] = init + 0.1 * bounce
+                    velocities[i] = init + 0.05 * bounce
                 }
 
             }
@@ -41,9 +41,6 @@ function animate() {
     }
     if (velocities[0] !== 0 || relative_pos[0] < 0) {
         requestAnimationFrame(animate)
-    }
-    else {
-        console.log('animation complete')
     }
 }
 
